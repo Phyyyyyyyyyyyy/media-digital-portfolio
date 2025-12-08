@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="theme.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/headergif7.gif">
+    <style>
+        /* Add semi-transparent background overlay INSIDE the gallery container */
+        .gallery-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(139, 139, 139, 0.123); /* Semi-transparent white */
+            backdrop-filter: blur(10px); /* Glass effect */
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            z-index: 0;
+        }
+        
+        /* Position the gallery container relative for the overlay */
+        .gallery-container {
+            position: relative;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Make sure content stays above the overlay */
+        .gallery-container h1,
+        .gallery {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Fix the stroke on h1 - make it black */
+        .gallery-container h1 {
+           
+            -webkit-text-fill-color: white; /* White fill */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
+        }
+        
+        /* Enhance gallery items for better contrast */
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Make overlay text more readable */
+        .gallery-overlay {
+            background: rgba(0, 0, 0, 0.75);
+        }
+        
+        .gallery-overlay p {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content" data-aos="fade-down">
+            <h1 data-aos="fade-right" data-aos-delay="200">PORTFOLIO</h1>
+        </div>
+    </div>
+
+    <div class="navbar" data-aos="fade-left">
+        <a href="main.html" data-aos="fade-up" data-aos-delay="100">Home</a>
+        <a href="portfolio.html" data-aos="fade-up" data-aos-delay="200">Portfolio</a>
+    </div>
+
+    <div class="gallery-container">
+        <h1 data-aos="fade-up">Activity Gallery</h1>
+        
+       <div class="gallery">
+
+                         <div class="gallery-item" data-aos="fade-up">
+                <a href="activities/Moodboard.pdf"  target="_blank">
+                    <img src="images/Moodboard.png" alt="Activity 2">
+                    <div class="gallery-overlay">
+                        <p>Branding Moodboard</p>
+                    </div>
+                </a>
+            </div>
+                        
+            <div class="gallery-item" data-aos="fade-up">
+                <a href="activities/Logos.pdf">
+                    <img src="images/Logo2.png" alt="Activity 3">
+                    <div class="gallery-overlay">
+                        <p>Logo Designs</p>
+                    </div>
+                </a>
+            </div>
+            <div class="gallery-item" data-aos="fade-up">
+                <a href="activities/Brochure.pdf" target="_blank" >
+                    <img src="images/Brochure1.png" alt="Activity 1">
+                    <div class="gallery-overlay">
+                        <p>Brochure</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="gallery-item" data-aos="fade-up">
+                <a href="activities/Flyer.pdf" target="_blank">
+                    <img src="images/Flyer.png" alt="Activity 4">
+                    <div class="gallery-overlay">
+                        <p>Flyer</p>
+                    </div>
+                </a>
+            </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+                <a href="activities/Business Card.pdf" target="_blank">
+                    <img src="images/Business Card1.png" alt="Activity 5">
+                    <div class="gallery-overlay">
+                        <p>Business Card</p>
+                    </div>
+                </a>
+            </div>
+
+        <div class="gallery-item" data-aos="fade-up">
+                <a href="activities/Calendar (3).pdf" target="_blank">
+                    <img src="images/front.png" alt="Activity 6">
+                    <div class="gallery-overlay">
+                        <p>2026 Calendar</p>
+                    </div>
+                </a>
+            </div>
+
+            <!----<div class="gallery-item" data-aos="fade-up">
+                <a href="activities/activity7.html">
+                    <img src="images/Act7.gif" alt="Activity 7">
+                    <div class="gallery-overlay">
+                        <p>Activity 7</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <a href="activities/activity8.html">
+                    <img src="images/Act8.gif" alt="Activity 8">
+                    <div class="gallery-overlay">
+                        <p>Activity 8</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <a href="activities/activity9.html">
+                    <img src="images/Act9.gif" alt="Activity 9">
+                    <div class="gallery-overlay">
+                        <p>Activity 9</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <a href="activities/activity10.html">
+                    <img src="images/Act10.gif" alt="Activity 10">
+                    <div class="gallery-overlay">
+                        <p>Activity 10</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <a href="activities/activity11.html">
+                    <img src="images/Activity11.gif" alt="Activity 11">
+                    <div class="gallery-overlay">
+                        <p>Activity 11</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item" data-aos="fade-up">
+                <a href="activities/activity12.html">
+                    <img src="images/Activity12.gif" alt="Activity 12">
+                    <div class="gallery-overlay">
+                        <p>Activity 12</p>
+                    </div>
+                </a>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <p>© 2025 Reuben Erich G. Navarrete. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scriptr.js"></script>
+</body>
+</html>
