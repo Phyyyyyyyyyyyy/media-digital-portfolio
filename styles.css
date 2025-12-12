@@ -20,8 +20,7 @@
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   line-height: 1.6;
-  background: 
-    url('images/HDbackg.jpg') center/cover no-repeat fixed;
+  background: url("images/HDbackg.jpg") center / cover no-repeat fixed;
   color: var(--text-primary);
   min-height: 100vh;
 }
@@ -31,7 +30,7 @@ body {
   position: relative;
   height: 160px;
   overflow: hidden;
-  background-image: url('images/HDbackg1.jpg');/*background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);*/
+  background-image: url("images/HDbackg1.jpg"); /*background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);*/
   background-size: cover;
 }
 
@@ -84,14 +83,14 @@ body {
 }
 
 .navbar a:hover {
-  color: #5FB3C4;
-  border-bottom-color: #5FB3C4;;
+  color: #5fb3c4;
+  border-bottom-color: #5fb3c4;
   background: rgba(0, 217, 217, 0.05);
 }
 
 /* Main Content */
 .main {
-  background: rgba(139, 139, 139, 0.452); 
+  background: rgba(139, 139, 139, 0.452);
   backdrop-filter: blur(10px); /* Optional blur effect */
   padding: 40px 40px;
   text-align: center;
@@ -143,7 +142,7 @@ body {
 
 .text-content b {
   color: rgba(0, 0, 0, 0.699);
-  font-weight: 600; 
+  font-weight: 600;
 }
 
 .image-content {
@@ -166,7 +165,7 @@ body {
 .frame:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 48px rgba(5, 66, 134, 0.473);
-  border-color:  rgba(6, 59, 172, 0.76)
+  border-color: rgba(6, 59, 172, 0.76);
 }
 
 .picture-container {
@@ -244,6 +243,14 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
+}
+
+/* Add centered calendar item styling */
+.gallery-item.calendar-centered {
+  grid-column: 1 / -1;
+  max-width: 400px;
+  margin: 0 auto;
+  justify-self: center;
 }
 
 .gallery-item {
@@ -429,60 +436,171 @@ p {
 }
 
 .swatch {
-width: 50px;
-height: 50px;
-margin-bottom: 10px;
-border-radius: 30px;
-display: flex;
-align-items: flex-end;
-justify-content: center;
-padding: 12px;
-text-align: center;
-font-weight: 600;
-font-size: 12px;
-color: #555;
-box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-transition: transform 0.2s;
-border: 3px solid rgba(29, 27, 27, 0.397);
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  color: #555;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  border: 3px solid rgba(29, 27, 27, 0.397);
 }
 
-
 .swatch:hover {
-transform: translateY(-4px);
+  transform: translateY(-4px);
 }
 
 .bright-blue {
-background: #4A90D9;
-color: white;
-
+  background: #4a90d9;
+  color: white;
 }
 
 .slate-blue {
- background: var(--primary);
-color: white;
-
+  background: var(--primary);
+  color: white;
 }
 
 .soft-beige {
-background: #E8E0D5;
-color: #333;
-
+  background: #e8e0d5;
+  color: #333;
 }
 
 .peachy-tan {
-background: #D4B8A8;
-color: #333;
-
+  background: #d4b8a8;
+  color: #333;
 }
 
 .teal-accent {
-background: #5FB3C4;
-color: white;
-
+  background: #5fb3c4;
+  color: white;
 }
 
 .rust-accent {
-background: #D9743F;
-color: white;
+  background: #d9743f;
+  color: white;
+}
 
+/* Enhanced gallery-centered-item to be a featured prototype showcase */
+.featured-prototype {
+  margin: 60px auto 40px;
+  padding: 40px;
+  max-width: 900px;
+  background: rgba(95, 179, 196, 0.1);
+  border: 2px solid rgba(95, 179, 196, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(95, 179, 196, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.featured-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #5fb3c4 !important;
+  font-family: "Space Mono", monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(95, 179, 196, 0.5) !important;
+}
+
+.prototype-showcase {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  border: 3px solid rgba(95, 179, 196, 0.5);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(26, 31, 58, 0.8);
+}
+
+.prototype-showcase:hover {
+  transform: scale(1.05) translateY(-12px);
+  box-shadow: 0 20px 60px rgba(95, 179, 196, 0.4);
+  border-color: #5fb3c4;
+}
+
+.prototype-showcase img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.prototype-showcase:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.prototype-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26, 31, 58, 0.95) 0%, rgba(26, 31, 58, 0.7) 50%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 40px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.prototype-showcase:hover .prototype-overlay {
+  opacity: 1;
+}
+
+.prototype-content {
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.prototype-showcase:hover .prototype-content {
+  transform: translateY(0);
+}
+
+.prototype-content h3 {
+  font-size: 1.8rem;
+  color: #5fb3c4 !important;
+  margin-bottom: 12px;
+  font-family: "Space Mono", monospace;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+.prototype-content p {
+  font-size: 1.1rem;
+  color: #ffffff !important;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.view-button {
+  display: inline-block;
+  padding: 12px 32px;
+  background: #5fb3c4;
+  color: white !important;
+  font-weight: 700;
+  border-radius: 8px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 16px rgba(95, 179, 196, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none; /* Added for consistency, it was missing in the update block but typically links should have it */
+}
+
+.prototype-showcase:hover .view-button {
+  background: #4a90d9;
+  box-shadow: 0 6px 24px rgba(74, 144, 217, 0.6);
+  transform: translateY(-2px);
+}
+
+.gallery-centered-item {
+  display: none; /* Hide old centered item styling */
 }
