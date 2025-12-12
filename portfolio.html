@@ -9,7 +9,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="shortcut icon" href="images/headergif7.gif">
     <style>
-        /* Add semi-transparent background overlay INSIDE the gallery container */
+       
         .gallery-container::before {
             content: "";
             position: absolute;
@@ -17,14 +17,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(139, 139, 139, 0.123); /* Semi-transparent white */
+            background: rgba(139, 139, 139, 0.123); 
             backdrop-filter: blur(10px); /* Glass effect */
             -webkit-backdrop-filter: blur(10px);
             border-radius: 20px;
             z-index: 0;
         }
         
-        /* Position the gallery container relative for the overlay */
+       
         .gallery-container {
             position: relative;
             padding: 40px 20px;
@@ -59,13 +59,21 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 0, 0, 0.08);
         }
-        
+
         .gallery-item:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
             border-color: rgba(0, 0, 0, 0.15);
         }
-        
+
+        /* Center specific gallery items */
+        .calendar-centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
         /* Make overlay text more readable */
         .gallery-overlay {
             background: rgba(0, 0, 0, 0.75);
@@ -74,6 +82,80 @@
         .gallery-overlay p {
             font-weight: 600;
             font-size: 1.1em;
+        }
+
+        /* Special styling for featured prototype */
+        .featured-prototype {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .featured-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .prototype-showcase {
+            position: relative;
+            display: inline-block;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .prototype-showcase:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .prototype-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .prototype-showcase:hover .prototype-overlay {
+            opacity: 1;
+        }
+
+        .prototype-content {
+            color: white;
+            text-align: center;
+        }
+
+        .prototype-content h3 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .prototype-content p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .view-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
@@ -92,9 +174,18 @@
     <div class="gallery-container">
         <h1 data-aos="fade-up">Activity Gallery</h1>
         
+        <!-- Fixed gallery structure - all items now properly inside gallery div -->
        <div class="gallery">
+            <div class="gallery-item" data-aos="fade-up">
+                <a href="images/NAVARRETE_act1.png" target="_blank">
+                    <img src="images/NAVARRETE_act1.png" alt="Activity 6">
+                    <div class="gallery-overlay">
+                        <p>Wallpaper</p>
+                    </div>
+                </a>
+            </div>
 
-                         <div class="gallery-item" data-aos="fade-up">
+            <div class="gallery-item" data-aos="fade-up">
                 <a href="activities/Moodboard.pdf"  target="_blank">
                     <img src="images/Moodboard.png" alt="Activity 2">
                     <div class="gallery-overlay">
@@ -104,22 +195,22 @@
             </div>
                         
             <div class="gallery-item" data-aos="fade-up">
-                <a href="activities/Logos.pdf">
-                    <img src="images/Logo2.png" alt="Activity 3">
+                <a href="activities/Logos.pdf" target="_blank">
+                    <img src="images/Logo2.png" alt="Logo Designs">
                     <div class="gallery-overlay">
                         <p>Logo Designs</p>
                     </div>
                 </a>
             </div>
+
             <div class="gallery-item" data-aos="fade-up">
-                <a href="activities/Brochure.pdf" target="_blank" >
+                <a href="activities/Brochure.pdf" target="_blank">
                     <img src="images/Brochure1.png" alt="Activity 1">
                     <div class="gallery-overlay">
                         <p>Brochure</p>
                     </div>
                 </a>
             </div>
-
 
             <div class="gallery-item" data-aos="fade-up">
                 <a href="activities/Flyer.pdf" target="_blank">
@@ -130,7 +221,7 @@
                 </a>
             </div>
 
-        <div class="gallery-item" data-aos="fade-up">
+            <div class="gallery-item" data-aos="fade-up">
                 <a href="activities/Business Card.pdf" target="_blank">
                     <img src="images/Business Card1.png" alt="Activity 5">
                     <div class="gallery-overlay">
@@ -139,7 +230,8 @@
                 </a>
             </div>
 
-        <div class="gallery-item" data-aos="fade-up">
+            <!-- Added calendar-centered class to center the 2026 calendar -->
+            <div class="gallery-item calendar-centered" data-aos="fade-up">
                 <a href="activities/Calendar (3).pdf" target="_blank">
                     <img src="images/front.png" alt="Activity 6">
                     <div class="gallery-overlay">
@@ -147,60 +239,23 @@
                     </div>
                 </a>
             </div>
+        </div>
 
-            <!----<div class="gallery-item" data-aos="fade-up">
-                <a href="activities/activity7.html">
-                    <img src="images/Act7.gif" alt="Activity 7">
-                    <div class="gallery-overlay">
-                        <p>Activity 7</p>
+        <!-- Made web prototype featured and prominent with special styling -->
+        <div class="featured-prototype" data-aos="zoom-in" data-aos-delay="200">
+            <h2 class="featured-title">Featured Project</h2>
+            <div class="prototype-showcase">
+                <a href="https://www.figma.com/design/ww6v85JBJNxDy2xP4k4cHJ/Company-Application?node-id=0-1&m=dev&t=BzjbbAuw9GOlIZDo-1" target="_blank">
+                    <img src="images/PhoneApp.png" alt="Mobile App Prototype">
+                    <div class="prototype-overlay">
+                        <div class="prototype-content">
+                            <h3>Mobile App Prototype</h3>
+                            <p>Interactive Design • Click to View</p>
+                            <span class="view-button">View Prototype →</span>
+                        </div>
                     </div>
                 </a>
             </div>
-
-            <div class="gallery-item" data-aos="fade-up">
-                <a href="activities/activity8.html">
-                    <img src="images/Act8.gif" alt="Activity 8">
-                    <div class="gallery-overlay">
-                        <p>Activity 8</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="gallery-item" data-aos="fade-up">
-                <a href="activities/activity9.html">
-                    <img src="images/Act9.gif" alt="Activity 9">
-                    <div class="gallery-overlay">
-                        <p>Activity 9</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="gallery-item" data-aos="fade-up">
-                <a href="activities/activity10.html">
-                    <img src="images/Act10.gif" alt="Activity 10">
-                    <div class="gallery-overlay">
-                        <p>Activity 10</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="gallery-item" data-aos="fade-up">
-                <a href="activities/activity11.html">
-                    <img src="images/Activity11.gif" alt="Activity 11">
-                    <div class="gallery-overlay">
-                        <p>Activity 11</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="gallery-item" data-aos="fade-up">
-                <a href="activities/activity12.html">
-                    <img src="images/Activity12.gif" alt="Activity 12">
-                    <div class="gallery-overlay">
-                        <p>Activity 12</p>
-                    </div>
-                </a>
-            </div> -->
         </div>
     </div>
 
